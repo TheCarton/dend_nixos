@@ -22,7 +22,6 @@
       ...
     }:
     {
-
       packages.wrapped-helix = inputs.wrapper-modules.wrappers.helix.wrap {
         inherit pkgs;
         settings = {

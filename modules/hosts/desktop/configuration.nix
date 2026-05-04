@@ -5,7 +5,6 @@
 
 
   #TODO:
-  # add all the noctalia default keys
   # refactor: move evremap and autostart features to outside of hosts. They're going to be used by the laptop as well, so they shouldn't be here.
   # add lazy git.
   # fix helix
@@ -29,8 +28,7 @@
       programs.nano.enable = false;
       imports = [
         self.nixosModules.desktopHardware
-        self.nixosModules.niri
-        self.nixosModules.yazi
+        self.nixosModules.primaryEnv
       ];
 
       fonts.fontDir.enable = true;
@@ -48,7 +46,6 @@
       # installed software
       environment.systemPackages = with pkgs; [
         vim
-        helix
         firefox
         git
         _1password-gui
