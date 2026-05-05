@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.yazi =
-    { pkgs, lib, ... }:
+    { pkgs, ... }:
     {
       programs.yazi = {
         enable = true;
@@ -10,7 +10,10 @@
     };
 
   perSystem =
-    { pkgs, ... }:
+    {
+      pkgs,
+      ...
+    }:
     {
       packages.wrapped-yazi = inputs.wrapper-modules.wrappers.yazi.wrap {
         inherit pkgs;
@@ -18,6 +21,5 @@
           dark = "gruvbox-dark";
         };
       };
-
     };
 }

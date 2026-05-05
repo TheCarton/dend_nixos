@@ -9,6 +9,10 @@
       programs.niri.enable = true;
       programs.niri.package = selfpkgs.niri;
 
+      environment.variables = {
+        EDITOR = "hx";
+      };
+
       imports = [
         self.nixosModules.niri
         self.nixosModules.yazi
