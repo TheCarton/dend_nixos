@@ -23,12 +23,13 @@
       inputs,
       ...
     }: let
-    selfpkgs = self.packages."${pkgs.system}";
+    selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
     in {
       programs.nano.enable = false;
       imports = [
         self.nixosModules.desktopHardware
         self.nixosModules.primaryEnv
+        self.nixosModules.nix
       ];
 
       fonts.fontDir.enable = true;
@@ -69,12 +70,6 @@
       	};
       };
     
-      # Enable the Flakes feature and the accompanying new nix command-line ool
-      nix.settings.experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-
       # Clean up Nix store entries that are older than 30 days.
       nix.gc = {
         automatic = true;
@@ -89,8 +84,6 @@
       environment.sessionVariables = {
         # Hint Electon apps to use wayland
         NIXOS_OZONE_WL = "1";
-        # define flake directory for nh (from vimjoyer vid)
-        NH_FLAKE = "/home/luke/dend_nixos/";
       };
 
       # Load nvidia driver for Xorg and Wayland
