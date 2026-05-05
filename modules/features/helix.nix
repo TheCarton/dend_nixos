@@ -12,7 +12,7 @@
   # an options.enable like niri does
   # I could try to rip off vimjoyer's whole enviornment.nix file, which seems
   # to accomplish this with the self' variable
-  # https://github.com/vimjoyer/nixconf/blob/main/wrappedPrograms/environment.nix 
+  # https://github.com/vimjoyer/nixconf/blob/main/wrappedPrograms/environment.nix
 
   perSystem =
     {
@@ -25,7 +25,7 @@
       packages.wrapped-helix = inputs.wrapper-modules.wrappers.helix.wrap {
         inherit pkgs;
         settings = {
-         keys.normal = {
+          keys.normal = {
             space."1" = ":w";
             space.q = ":q";
           };
@@ -108,6 +108,6 @@
             }
           ];
         };
+      };
     };
-};
 }

@@ -1,5 +1,6 @@
-{ self, inputs, ... }: {
-flake.nixosModules.yazi =
+{ self, inputs, ... }:
+{
+  flake.nixosModules.yazi =
     { pkgs, lib, ... }:
     {
       programs.yazi = {
@@ -8,13 +9,15 @@ flake.nixosModules.yazi =
       };
     };
 
-    perSystem = { pkgs, ... }: {
-    packages.wrapped-yazi = inputs.wrapper-modules.wrappers.yazi.wrap {
-      inherit pkgs;
-      flavors = {
-        dark = "gruvbox-dark";
+  perSystem =
+    { pkgs, ... }:
+    {
+      packages.wrapped-yazi = inputs.wrapper-modules.wrappers.yazi.wrap {
+        inherit pkgs;
+        flavors = {
+          dark = "gruvbox-dark";
+        };
       };
-    };
-      
+
     };
 }

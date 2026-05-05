@@ -28,28 +28,28 @@
 
           binds = {
             "Mod+Return".spawn-sh = lib.getExe self'.packages.kitty;
-            "Mod+W".close-window = {};
+            "Mod+W".close-window = { };
             "Mod+space".spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call launcher toggle";
 
-            "Mod+F".maximize-column = {};
-            "Mod+G".fullscreen-window = {};
-            "Mod+Shift+F".toggle-window-floating = {};
-            "Mod+C".center-column = {};
+            "Mod+F".maximize-column = { };
+            "Mod+G".fullscreen-window = { };
+            "Mod+Shift+F".toggle-window-floating = { };
+            "Mod+C".center-column = { };
 
-            "Mod+H".focus-column-left = {};
-            "Mod+L".focus-column-right = {};
-            "Mod+K".focus-window-up = {};
-            "Mod+J".focus-window-down = {};
+            "Mod+H".focus-column-left = { };
+            "Mod+L".focus-column-right = { };
+            "Mod+K".focus-window-up = { };
+            "Mod+J".focus-window-down = { };
 
-            "Mod+Left".focus-column-left = {};
-            "Mod+Right".focus-column-right = {};
-            "Mod+Up".focus-window-up = {};
-            "Mod+Down".focus-window-down = {};
+            "Mod+Left".focus-column-left = { };
+            "Mod+Right".focus-column-right = { };
+            "Mod+Up".focus-window-up = { };
+            "Mod+Down".focus-window-down = { };
 
-            "Mod+Shift+H".move-column-left = {};
-            "Mod+Shift+L".move-column-right = {};
-            "Mod+Shift+K".move-window-up = {};
-            "Mod+Shift+J".move-window-down = {};
+            "Mod+Shift+H".move-column-left = { };
+            "Mod+Shift+L".move-column-right = { };
+            "Mod+Shift+K".move-window-up = { };
+            "Mod+Shift+J".move-window-down = { };
 
             "Mod+1".focus-workspace = "w0";
             "Mod+2".focus-workspace = "w1";
@@ -72,7 +72,7 @@
             "Mod+Shift+8".move-column-to-workspace = "w7";
             "Mod+Shift+9".move-column-to-workspace = "w8";
             "Mod+Shift+0".move-column-to-workspace = "w9";
-            
+
           };
         };
       };

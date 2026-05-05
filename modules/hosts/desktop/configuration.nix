@@ -3,7 +3,6 @@
   # The command for rebuilding this is:
   # sudo nixos-rebuild switch --flake .#desktop
 
-
   #TODO:
   # refactor: move evremap and autostart features to outside of hosts. They're going to be used by the laptop as well, so they shouldn't be here.
   # add lazy git.
@@ -22,9 +21,11 @@
       pkgs,
       inputs,
       ...
-    }: let
-    selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
-    in {
+    }:
+    let
+      selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
+    in
+    {
       programs.nano.enable = false;
       imports = [
         self.nixosModules.desktopHardware
@@ -54,9 +55,9 @@
       ];
 
       services = {
-      	evdevremapkeys = {
-      		enable = true;
-      		settings = {
+        evdevremapkeys = {
+          enable = true;
+          settings = {
             devices = [
               {
                 input_name = "Logitech USB Keyboard";
@@ -67,9 +68,9 @@
               }
             ];
           };
-      	};
+        };
       };
-    
+
       # Clean up Nix store entries that are older than 30 days.
       nix.gc = {
         automatic = true;
