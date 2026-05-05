@@ -11,9 +11,12 @@
     ];
 
     environment.systemPackages = [
+      pkgs.lazygit
       selfpkgs.noctalia-shell
       selfpkgs.wrapped-helix
       selfpkgs.fish
+      selfpkgs.kitty
+      selfpkgs.nh
     ];
 
     fonts.packages = with pkgs; [

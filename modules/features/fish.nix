@@ -13,6 +13,8 @@
       pkgs.writeText "fishy-fishy"
       # fish
       ''
+        abbr --add rebuild_flake sudo nixos-rebuild switch --flake .#desktop
+        abbr --add lg lazygit
         function fish_prompt
             string join "" -- (set_color red) "[" (set_color yellow) $USER (set_color green) "@" (set_color blue) $hostname (set_color magenta) " " $(prompt_pwd) (set_color red) ']' (set_color normal) "\$ "
         end
