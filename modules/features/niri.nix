@@ -22,6 +22,10 @@
             (lib.getExe self'.packages.noctalia-shell)
           ];
 
+          spawn-sh-at-startup = [
+            "cursor-clip --daemon"
+          ];
+
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
           input.keyboard.xkb.layout = "us,ua";
@@ -37,6 +41,7 @@
             "Mod+W".close-window = { };
             "Mod+space".spawn-sh = "${lib.getExe self'.packages.noctalia-shell} ipc call launcher toggle";
 
+            "Mod+V".spawn-sh = "cursor-clip";
             "Mod+F".maximize-column = { };
             "Mod+G".fullscreen-window = { };
             "Mod+Shift+F".toggle-window-floating = { };

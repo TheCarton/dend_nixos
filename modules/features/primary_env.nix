@@ -16,9 +16,10 @@
       imports = [
         self.nixosModules.niri
         self.nixosModules.yazi
-        self.nixosModules.gdm
+        self.nixosModules.sddm
         self.nixosModules.terminal
         self.nixosModules.helixExtras
+        self.nixosModules.cursorClip
       ];
 
       environment.systemPackages = [
