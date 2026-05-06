@@ -16,7 +16,7 @@
       imports = [
         self.nixosModules.niri
         self.nixosModules.yazi
-        self.nixosModules.sddm
+        self.nixosModules.gdm
       ];
 
       environment.systemPackages = [
