@@ -1,18 +1,12 @@
 { self, inputs, ... }:
 {
-  # flake.nixosModules.helix =
-  #   { pkgs, lib, ... }:
-  #   {
-  #     environment.systemPackages = [
-  #       self'.packages.wrapped-helix
-  #     ];
-  #   };
-  #
-  # I'm confused how to installed wrapped-helix system-wide. Helix doesn't have
-  # an options.enable like niri does
-  # I could try to rip off vimjoyer's whole enviornment.nix file, which seems
-  # to accomplish this with the self' variable
-  # https://github.com/vimjoyer/nixconf/blob/main/wrappedPrograms/environment.nix
+  flake.nixosModules.helixExtras =
+    { pkgs, lib, ... }:
+    {
+      environment.systemPackages = [
+        pkgs.wl-clipboard-rs
+      ];
+    };
 
   perSystem =
     {

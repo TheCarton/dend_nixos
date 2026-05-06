@@ -5,6 +5,8 @@
     {
     };
 
+  # TODO: there is desktop specific config in here, so that needs to be abstracted for the laptop.
+
   perSystem =
     {
       pkgs,
@@ -25,6 +27,10 @@
           input.keyboard.xkb.layout = "us,ua";
 
           layout.gaps = 5;
+
+          outputs."DP-1" = {
+            focus-at-startup = { };
+          };
 
           binds = {
             "Mod+Return".spawn-sh = lib.getExe self'.packages.kitty;

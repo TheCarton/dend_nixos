@@ -1,18 +1,5 @@
 { self, inputs, ... }:
 {
-  # The command for rebuilding this is:
-  # sudo nixos-rebuild switch --flake .#desktop
-
-  #TODO:
-  # refactor: move evremap and autostart features to outside of hosts. They're going to be used by the laptop as well, so they shouldn't be here.
-  # add lazy git.
-  # fix helix
-  # add helix nix auto formatting
-  # add nix helpers
-  # git this under version control
-  # create terminal features e.g zoxide, ripgrep, github helper, htop
-  # make niri autostart 'cause it ain't.
-
   flake.nixosModules.desktopConfiguration =
 
     {

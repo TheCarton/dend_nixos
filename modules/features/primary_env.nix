@@ -17,10 +17,11 @@
         self.nixosModules.niri
         self.nixosModules.yazi
         self.nixosModules.gdm
+        self.nixosModules.terminal
+        self.nixosModules.helixExtras
       ];
 
       environment.systemPackages = [
-        pkgs.lazygit
         selfpkgs.noctalia-shell
         selfpkgs.wrapped-helix
         selfpkgs.fish
