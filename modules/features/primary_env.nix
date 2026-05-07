@@ -1,13 +1,11 @@
 { self, ... }:
 {
   flake.nixosModules.primaryEnv =
-    { pkgs, ... }:
+    { pkgs, inputs, ... }:
     let
       selfpkgs = self.packages."${pkgs.system}";
     in
     {
-      programs.niri.enable = true;
-      programs.niri.package = selfpkgs.niri;
 
       environment.variables = {
         EDITOR = "hx";
@@ -15,15 +13,16 @@
 
       imports = [
         self.nixosModules.niri
-        self.nixosModules.yazi
         self.nixosModules.sddm
+        self.nixosModules.noctalia
+        self.nixosModules.yazi
         self.nixosModules.terminal
         self.nixosModules.helixExtras
         self.nixosModules.cursorClip
       ];
 
       environment.systemPackages = [
-        selfpkgs.noctalia-shell
+        pkgs.chezmoi
         selfpkgs.wrapped-helix
         selfpkgs.fish
         selfpkgs.kitty

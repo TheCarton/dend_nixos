@@ -1,11 +1,10 @@
 { self, inputs, ... }:
 {
-  perSystem =
+  flake.nixosModules.noctalia =
     { pkgs, ... }:
     {
-      packages.noctalia-shell = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
-        inherit pkgs;
-        settings = (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
-      };
+      environment.systemPackages = [
+        pkgs.noctalia-shell
+      ];
     };
 }

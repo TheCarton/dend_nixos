@@ -22,8 +22,6 @@
 
       fonts.fontDir.enable = true;
 
-      security.polkit.enable = true;
-
       hardware.openrazer = {
         enable = true;
       };
@@ -141,9 +139,16 @@
         LC_TIME = "en_US.UTF-8";
       };
 
-      services.pulseaudio.enable = true;
-      services.pipewire.enable = false;
-      nixpkgs.config.pulseaudio = true;
+      # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
+      security.rtkit.enable = true;
+      services.pipewire = {
+        enable = true; # if not already enabled
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        # If you want to use JACK applications, uncomment the following
+        #jack.enable = true;
+      };
 
       # Define a user account. Don't forget to set a password with ‘passwd’.
       users.users.luke = {
