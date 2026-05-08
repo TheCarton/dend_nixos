@@ -13,6 +13,10 @@
         xwayland-satellite
         mako
         wlr-which-key
+
+        # for intial niri installs
+        alacritty
+        fuzzel
       ];
 
       security.polkit.enable = true; # polkit
