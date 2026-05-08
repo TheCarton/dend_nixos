@@ -7,10 +7,13 @@
     in
     {
 
+      users.defaultUserShell = pkgs.fish;
+
       environment.variables = {
         EDITOR = "hx";
       };
 
+      programs.fish.enable = true;
       imports = [
         self.nixosModules.niri
         self.nixosModules.sddm
@@ -23,9 +26,9 @@
 
       environment.systemPackages = [
         pkgs.chezmoi
+        pkgs.kitty
+        pkgs.signal-desktop
         selfpkgs.wrapped-helix
-        selfpkgs.fish
-        selfpkgs.kitty
         selfpkgs.nh
       ];
 

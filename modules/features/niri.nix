@@ -11,11 +11,8 @@
       programs.niri.enable = true;
       environment.systemPackages = with pkgs; [
         xwayland-satellite
-        alacritty
-        fuzzel
-        swaylock
         mako
-        swayidle
+        wlr-which-key
       ];
 
       security.polkit.enable = true; # polkit
