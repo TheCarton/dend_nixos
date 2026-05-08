@@ -26,8 +26,6 @@
         enable = true;
       };
 
-      # preferences.autostart = [selfpkgs.noctalia-shell];
-
       # following nixos wiki at https://nixos.wiki/wiki/VirtualBox
       users.extraGroups.vboxusers.members = [ "luke" ];
       # installed software

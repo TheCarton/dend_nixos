@@ -28,6 +28,7 @@
         pkgs.chezmoi
         pkgs.kitty
         pkgs.signal-desktop
+        pkgs.discord
         selfpkgs.wrapped-helix
         selfpkgs.nh
       ];
