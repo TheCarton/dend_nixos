@@ -5,6 +5,7 @@
     {
       environment.systemPackages = [
         pkgs.wl-clipboard-rs
+        pkgs.yaml-language-server
       ];
     };
 
