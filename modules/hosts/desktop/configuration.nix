@@ -22,10 +22,6 @@
 
       fonts.fontDir.enable = true;
 
-      hardware.openrazer = {
-        enable = true;
-      };
-
       # following nixos wiki at https://nixos.wiki/wiki/VirtualBox
       users.extraGroups.vboxusers.members = [ "luke" ];
       # installed software
@@ -155,7 +151,6 @@
         extraGroups = [
           "networkmanager"
           "wheel"
-          "openrazer" # needed for openrazer-daemon
           "audio"
         ];
       };

@@ -22,10 +22,6 @@
 
       fonts.fontDir.enable = true;
 
-      hardware.openrazer = {
-        enable = true;
-      };
-
       # installed software
       environment.systemPackages = with pkgs; [
         vim
