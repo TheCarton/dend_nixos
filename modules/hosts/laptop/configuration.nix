@@ -26,33 +26,13 @@
         enable = true;
       };
 
-      # following nixos wiki at https://nixos.wiki/wiki/VirtualBox
-      users.extraGroups.vboxusers.members = [ "luke" ];
       # installed software
       environment.systemPackages = with pkgs; [
         vim
         firefox
         git
         _1password-gui
-        evremap
       ];
-
-      # services = {
-      #   evdevremapkeys = {
-      #     enable = true;
-      #     settings = {
-      #       devices = [
-      #         {
-      #           input_name = "Logitech USB Keyboard";
-      #           output_name = "remap-capslock";
-      #           remappings = {
-      #             KEY_CAPSLOCK = [ "KEY_LEFTMETA" ];
-      #           };
-      #         }
-      #       ];
-      #     };
-      #   };
-      # };
 
       # Clean up Nix store entries that are older than 30 days.
       nix.gc = {
@@ -111,18 +91,6 @@
         pulse.enable = true;
         # If you want to use JACK applications, uncomment the following
         #jack.enable = true;
-      };
-
-      # Define a user account. Don't forget to set a password with ‘passwd’.
-      users.users.luke = {
-        isNormalUser = true;
-        description = "luke";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-          "openrazer" # needed for openrazer-daemon
-          "audio"
-        ];
       };
 
       # Allow unfree packages

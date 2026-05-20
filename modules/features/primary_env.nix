@@ -13,10 +13,16 @@
         EDITOR = "hx";
       };
 
+      services.syncthing = {
+        enable = true;
+        openDefaultPorts = true;
+      };
+
+      services.displayManager.ly.enable = true;
+
       programs.fish.enable = true;
       imports = [
         self.nixosModules.niri
-        self.nixosModules.sddm
         self.nixosModules.noctalia
         self.nixosModules.yazi
         self.nixosModules.terminal
@@ -24,11 +30,15 @@
         self.nixosModules.cursorClip
       ];
 
+      ## Add software below.
       environment.systemPackages = [
+        pkgs.sshfs
         pkgs.chezmoi
         pkgs.kitty
         pkgs.signal-desktop
         pkgs.discord
+        pkgs.super-productivity
+        pkgs.localsend
         selfpkgs.wrapped-helix
         selfpkgs.nh
       ];
