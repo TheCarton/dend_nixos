@@ -15,14 +15,17 @@
 
       services.syncthing = {
         enable = true;
+        user = "luke";
+        group = "users";
+        dataDir = "/home/luke"; # where syncthing stores its state
+        configDir = "/home/luke/.config/syncthing";
         openDefaultPorts = true;
       };
-
-      services.displayManager.ly.enable = true;
 
       programs.fish.enable = true;
       imports = [
         self.nixosModules.niri
+        self.nixosModules.ly
         self.nixosModules.noctalia
         self.nixosModules.yazi
         self.nixosModules.terminal
@@ -32,6 +35,7 @@
 
       ## Add software below.
       environment.systemPackages = [
+        pkgs.keepassxc
         pkgs.sshfs
         pkgs.chezmoi
         pkgs.kitty
