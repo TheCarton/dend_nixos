@@ -27,7 +27,6 @@
         vim
         firefox
         git
-        _1password-gui
       ];
 
       # Clean up Nix store entries that are older than 30 days.

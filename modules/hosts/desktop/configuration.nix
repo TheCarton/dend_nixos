@@ -29,7 +29,6 @@
         vim
         firefox
         git
-        _1password-gui
         evremap
       ];
 
