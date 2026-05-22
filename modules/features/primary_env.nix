@@ -42,10 +42,12 @@
         pkgs.signal-desktop
         pkgs.discord
         pkgs.super-productivity
-        pkgs.localsend
         selfpkgs.wrapped-helix
         selfpkgs.nh
       ];
+
+      programs.localsend.enable = true;
+      programs.localsend.openFirewall = true;
 
       fonts.packages = with pkgs; [
         nerd-fonts.jetbrains-mono
