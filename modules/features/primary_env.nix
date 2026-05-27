@@ -9,6 +9,18 @@
 
       users.defaultUserShell = pkgs.fish;
 
+      # Define a user account. Don't forget to set a password with ‘passwd’.
+      users.users.luke = {
+        isNormalUser = true;
+        description = "luke";
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+          "audio"
+          "fuse" # needed for sshfs
+        ];
+      };
+
       environment.variables = {
         EDITOR = "hx";
       };

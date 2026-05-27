@@ -143,17 +143,6 @@
         #jack.enable = true;
       };
 
-      # Define a user account. Don't forget to set a password with ‘passwd’.
-      users.users.luke = {
-        isNormalUser = true;
-        description = "luke";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-          "audio"
-        ];
-      };
-
       # Allow unfree packages
       nixpkgs.config.allowUnfree = true;
 
