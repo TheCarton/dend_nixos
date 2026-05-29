@@ -97,7 +97,7 @@
         nvidiaSettings = true;
 
         # Optionally, you may need to select the appropriate driver version for your specific GPU.
-        # package = config.boot.kernelPackages.nvidiaPackages.stable;
+        package = config.boot.kernelPackages.nvidiaPackages.stable;
       };
 
       # Bootloader.
@@ -148,7 +148,6 @@
 
       services.gvfs.enable = true;
       services.udisks2.enable = true;
-      programs.steam.enable = true;
 
       # Some programs need SUID wrappers, can be configured further or are
       # started in user sessions.
