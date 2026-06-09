@@ -7,6 +7,13 @@
 
     wrappers.url = "github:Lassulus/wrappers";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        # IMPORTANT: To ensure compatibility with the latest Firefox version, use nixpkgs-unstable.
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
   # Import all .nix files from current directory except flake.nix recursively
   outputs =

@@ -1,7 +1,7 @@
-{ self, ... }:
+{ self, inputs, ... }:
 {
   flake.nixosModules.primaryEnv =
-    { pkgs, inputs, ... }:
+    { pkgs, ... }:
     let
       selfpkgs = self.packages."${pkgs.system}";
     in
@@ -54,6 +54,8 @@
 
       ## Add software below.
       environment.systemPackages = [
+        pkgs.ytmdesktop
+        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         pkgs.anki
         pkgs.keepassxc
         pkgs.sshfs
