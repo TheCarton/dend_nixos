@@ -54,6 +54,7 @@
 
       ## Add software below.
       environment.systemPackages = [
+        pkgs.libreoffice
         pkgs.mpv
         pkgs.ytmdesktop
         inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
