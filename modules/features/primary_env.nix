@@ -54,6 +54,7 @@
 
       ## Add software below.
       environment.systemPackages = [
+        pkgs.qbittorrent
         pkgs.libreoffice
         pkgs.mpv
         pkgs.ytmdesktop
