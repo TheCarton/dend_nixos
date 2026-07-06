@@ -49,11 +49,11 @@
         self.nixosModules.yazi
         self.nixosModules.terminal
         self.nixosModules.helixExtras
-        self.nixosModules.cursorClip
       ];
 
       ## Add software below.
       environment.systemPackages = [
+        pkgs.kdePackages.okular
         pkgs.qbittorrent
         pkgs.libreoffice
         pkgs.mpv
