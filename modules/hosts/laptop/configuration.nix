@@ -21,6 +21,8 @@
       ];
 
       fonts.fontDir.enable = true;
+      services.upower.enable = true;
+      # for laptop battery monitoring
 
       # installed software
       environment.systemPackages = with pkgs; [
