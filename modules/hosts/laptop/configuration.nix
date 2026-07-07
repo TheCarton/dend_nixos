@@ -30,7 +30,22 @@
         firefox
         git
       ];
-
+      services = {
+        evdevremapkeys = {
+          enable = true;
+          settings = {
+            devices = [
+              {
+                input_name = "Logitech USB Keyboard";
+                output_name = "remap-capslock";
+                remappings = {
+                  KEY_CAPSLOCK = [ "KEY_LEFTMETA" ];
+                };
+              }
+            ];
+          };
+        };
+      };
       # Clean up Nix store entries that are older than 30 days.
       nix.gc = {
         automatic = true;
