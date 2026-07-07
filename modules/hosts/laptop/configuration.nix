@@ -29,14 +29,16 @@
         vim
         firefox
         git
+        evremap
       ];
+
       services = {
         evdevremapkeys = {
           enable = true;
           settings = {
             devices = [
               {
-                input_name = "Logitech USB Keyboard";
+                input_name = "AT Translated Set 2 keyboard";
                 output_name = "remap-capslock";
                 remappings = {
                   KEY_CAPSLOCK = [ "KEY_LEFTMETA" ];
