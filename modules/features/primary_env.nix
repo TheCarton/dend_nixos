@@ -57,7 +57,6 @@
         pkgs.qbittorrent
         pkgs.libreoffice
         pkgs.mpv
-        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         pkgs.anki
         pkgs.keepassxc
         pkgs.sshfs
