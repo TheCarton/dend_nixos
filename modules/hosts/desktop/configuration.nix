@@ -33,16 +33,14 @@
       ];
 
       services = {
-        evdevremapkeys = {
+        evremap = {
           enable = true;
           settings = {
-            devices = [
+            device_name = "Logitech USB Keyboard";
+            remap = [
               {
-                input_name = "Logitech USB Keyboard";
-                output_name = "remap-capslock";
-                remappings = {
-                  KEY_CAPSLOCK = [ "KEY_LEFTMETA" ];
-                };
+                input = [ "KEY_CAPSLOCK" ];
+                output = [ "KEY_LEFTMETA" ];
               }
             ];
           };

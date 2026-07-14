@@ -33,21 +33,20 @@
       ];
 
       services = {
-        evdevremapkeys = {
+        evremap = {
           enable = true;
           settings = {
-            devices = [
+            device_name = "AT Translated Set 2 keyboard";
+            remap = [
               {
-                input_name = "AT Translated Set 2 keyboard";
-                output_name = "remap-capslock";
-                remappings = {
-                  KEY_CAPSLOCK = [ "KEY_LEFTMETA" ];
-                };
+                input = [ "KEY_CAPSLOCK" ];
+                output = [ "KEY_LEFTMETA" ];
               }
             ];
           };
         };
       };
+
       # Clean up Nix store entries that are older than 30 days.
       nix.gc = {
         automatic = true;
