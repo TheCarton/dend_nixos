@@ -64,7 +64,6 @@
         pkgs.kitty
         pkgs.signal-desktop
         pkgs.discord
-        pkgs.super-productivity
         selfpkgs.wrapped-helix
         selfpkgs.nh
       ];
