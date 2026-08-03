@@ -17,6 +17,7 @@
       imports = [
         self.nixosModules.desktopHardware
         self.nixosModules.primaryEnv
+        self.nixosModules.virt
         self.nixosModules.nix
       ];
 

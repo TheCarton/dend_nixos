@@ -4,6 +4,10 @@
     { pkgs, ... }:
     let
       selfpkgs = self.packages."${pkgs.system}";
+      stablePkgs = import inputs.nixpkgs-stable {
+        system = pkgs.system;
+        config.allowUnfree = pkgs.config.allowUnfree or false;
+      };
     in
     {
 
@@ -57,7 +61,7 @@
         pkgs.qbittorrent
         pkgs.libreoffice
         pkgs.mpv
-        pkgs.anki
+        stablePkgs.anki
         pkgs.keepassxc
         pkgs.sshfs
         pkgs.chezmoi

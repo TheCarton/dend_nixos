@@ -9,6 +9,7 @@
     }:
     {
       environment.systemPackages = with pkgs; [
+        # virt-manager
         dnsmasq
       ];
       networking.firewall.trustedInterfaces = [ "virbr0" ];
