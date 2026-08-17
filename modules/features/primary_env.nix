@@ -61,7 +61,11 @@
         pkgs.qbittorrent
         pkgs.libreoffice
         pkgs.mpv
-        stablePkgs.anki
+        (pkgs.anki.withAddons [
+          pkgs.ankiAddons.passfail2
+        ])
+        # pkgs.anki.withAddons
+        # [ pkgs.ankiAddons.passfail2 ]
         pkgs.keepassxc
         pkgs.sshfs
         pkgs.chezmoi
