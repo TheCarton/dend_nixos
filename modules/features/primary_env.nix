@@ -57,6 +57,7 @@
 
       ## Add software below.
       environment.systemPackages = [
+        pkgs.pinta
         pkgs.kdePackages.okular
         pkgs.qbittorrent
         pkgs.libreoffice
