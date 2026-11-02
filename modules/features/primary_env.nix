@@ -57,6 +57,7 @@
 
       ## Add software below.
       environment.systemPackages = [
+        pkgs.jq
         pkgs.hugo
         pkgs.pinta
         pkgs.kdePackages.okular

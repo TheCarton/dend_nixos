@@ -4,7 +4,7 @@
     { pkgs, ... }:
     {
       environment.systemPackages = [
-        pkgs.noctalia-shell
+        pkgs.noctalia
       ];
     };
 }
