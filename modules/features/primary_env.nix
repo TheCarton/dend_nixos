@@ -64,11 +64,11 @@
         pkgs.qbittorrent
         pkgs.libreoffice
         pkgs.mpv
-        (pkgs.anki.withAddons [
-          pkgs.ankiAddons.passfail2
-        ])
-        # pkgs.anki.withAddons
-        # [ pkgs.ankiAddons.passfail2 ]
+        # Anki isn't working, waiting for update to fix things to be merged?
+        # pkgs.anki
+        # (pkgs.anki.withAddons [
+        #   pkgs.ankiAddons.passfail2
+        # ])
         pkgs.keepassxc
         pkgs.sshfs
         pkgs.chezmoi
